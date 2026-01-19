@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Project</title>
+</head>
+<body>
+  <h1>Library Project</h1>
+  <pre id="output"></pre>
+
+  <script>
+    class Book {
+      constructor(title, author) {
+        this.title = title;
+        this.author = author;
+      }
+
+      info() {
+        return `Book: "${this.title}" by ${this.author}`;
+      }
+
+      static welcomeMessage() {
+        return "Welcome to the Library!";
+      }
+    }
+
+    class EBook extends Book {
+      constructor(title, author, fileSizeMB) {
+        super(title, author);
+        this.fileSizeMB = fileSizeMB;
+      }
+
+      info() {
+        return `${super.info()} - File Size: ${this.fileSizeMB}MB`;
+      }
+    }
+
+    const output = document.getElementById("output");
+
+    output.textContent += Book.welcomeMessage() + "\n";
+
+    let physicalBook = new Book("Harry Potter", "J.K. Rowling");
+    output.textContent += physicalBook.info() + "\n";
+
+    let myEBook = new EBook("Digital Fortress", "Dan Brown", 2.5);
+    output.textContent += myEBook.info() + "\n";
+  </script>
+</body>
+</html>
