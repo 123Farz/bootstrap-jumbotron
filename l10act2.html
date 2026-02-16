@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Error Handling</title>
+  </head>
+  <body>
+    <h2>JavaScript Error Handling</h2>
+    <p>This example demonstrates how to use <strong>try...catch</strong> to handle errors.</p>
+    <p id="error_message"></p>
+
+    <script>
+      try {
+        // This will throw an error because the function does not exist
+        addAlert("Welcome guest!");
+      } catch (err) {
+        // Display the error message
+        document.getElementById("error_message").textContent =
+          "Error: " + err.message;
+      }
+    </script>
+  </body>
+</html>
