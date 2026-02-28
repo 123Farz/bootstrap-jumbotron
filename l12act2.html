@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Input Validation using API </title>
+</head>
+<body>
+
+    <h2> Number Input Validation </h2>
+    <p> Enter a number between 100 and 300, then click OK:</p>
+    <input id="numInput" type="number" min="100" max="300" required />
+    <button onclick="validateInput()">OK</button>
+    <p>If the number is invalid, an error message will be displayed.</p>
+    <p id="result"></p>
+
+    <script>
+        function validateInput() {
+            const inputObj = document.getElementById("numInput");
+            if (!inputObj.checkValidity()) {
+
+            document.getElementById("result").textContent = 
+            inputObj.validationMessage; } else {
+                 document.getElementById("result").textContent = "Input OK";
+            }
+         
+            }
+        
+
+    </script>
+
+    </body>
+    </html>

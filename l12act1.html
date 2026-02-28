@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Form Validation</title>
+</head>
+<body>
+
+<h2>Form Validation Example</h2>
+
+<form name="form" onsubmit="return validateForm()">
+Name: <input type="text" name="fname" />
+<input type="submit" value="Submit" />
+</form>
+
+<p id="message"></p>
+
+<script>
+// Function to validate the form
+function validateForm() {
+var name = document.forms["form"]["fname"].value;
+
+if (name == "") {
+alert("Name must be filled out");
+return false; // Prevent form submission
+}
+}
+</script>
+
+</body>
+</html>
