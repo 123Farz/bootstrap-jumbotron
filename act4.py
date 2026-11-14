@@ -1,10 +1,15 @@
-num = int(input("Choose a number:"))
-if num>1:
-    for i in range(2, int(num**0.5)+1):
-        if num %i == 0:
-            print (f"{num} is not a prime number")
-            break
-    else:
-        print(f"{num} is a prime number")
-else:
-    print(f"{num} is not a prime numer")
+class Mobile:
+    charging_type = "type-c"
+    
+    def __init__(self, model, os):
+        self.model = model
+        self.os = os
+        
+    def brandName(self):
+        return "{} runs on {}". format(self.model, self.os)
+
+smartphone1= Mobile("Samsung", "android")
+smartphone2= Mobile("iPhone", "ios")
+
+print(smartphone1.brandName())
+print(smartphone2.brandName())
